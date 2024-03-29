@@ -84,6 +84,13 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -228,6 +235,12 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'ThePrimeagen/vim-be-good',
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -257,6 +270,22 @@ require('lazy').setup({
       },
     },
   },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+        require("nvim-tree").setup {}
+    end,
+  },
+  'nvim-tree/nvim-tree.lua',
+  'nvim-tree/nvim-web-devicons',
+  'antosha417/nvim-lsp-file-operations',
+  'echasnovski/mini.base16',
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -542,6 +571,14 @@ require('lazy').setup({
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
+        -- java_language_server = {},
+        -- csharp_ls = {},
+        -- css_variables = {},
+        -- emmet_language_server = {},
+        -- eslint = {},
+        -- emmet_ls = {},
+        -- markdown_oxide = {},
+        -- postgres_lsp = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
