@@ -232,23 +232,28 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 
+require('lazy').setup 'plugins'
 
-
-require('lazy').setup('plugins')
-
--- Custom keymaps
+-- -- Custom keymaps
+-- Telescope
 vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = "Toggle Undotree" })
-
+-- Undotree
+vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = 'Toggle Undotree' })
+-- New tab
+vim.keymap.set('n', 'te', ':tabedit')
+vim.keymap.set('n', '<tab>', ':tabnext<Return>', opts)
+vim.keymap.set('n', '<s-tab>', ':tabprev<Return>', opts)
+-- Split window
+vim.keymap.set('n', 'ss', ':split<Return>', opts)
+vim.keymap.set('n', 'sv', ':vsplit<Return>', opts)
 -- Automatically load Solarized Osaka colorscheme
-vim.cmd('colorscheme solarized-osaka')
+vim.cmd 'colorscheme solarized-osaka'
 
-
-require('lazy').setup({
-    require 'kickstart.plugins.debug',
-    require 'kickstart.plugins.indent_line',
-    require 'kickstart.plugins.lint',
-})
+require('lazy').setup {
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
