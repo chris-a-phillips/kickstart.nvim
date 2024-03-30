@@ -19,6 +19,7 @@ local plugins = {
   { 'folke/todo-comments.nvim', opts = {} , event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } }, -- Highlight todo, notes, etc in comments
   { 'ThePrimeagen/vim-be-good'}, -- practice for vim motions
   { 'tpope/vim-fugitive'},
+  { 'folke/noice.nvim'},
 }
 
 -- -- Importeed plugins with configurations
@@ -37,5 +38,7 @@ table.insert(plugins, require 'plugins.telescope')
 table.insert(plugins, require 'plugins.treesitter')
 table.insert(plugins, require 'plugins.undotree')
 table.insert(plugins, require 'plugins.which-key')
+table.insert(plugins, require 'plugins.bufferline')
+table.insert(plugins, require 'plugins.incline')
 
 return plugins

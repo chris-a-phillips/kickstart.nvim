@@ -1,6 +1,15 @@
 return {
     {'folke/tokyonight.nvim'},
     {
+        "nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
+        opts = {
+          options = {
+            theme = "solarized_dark",
+          },
+        },
+    },
+    {
         "craftzdog/solarized-osaka.nvim",
         lazy = false,
         priority = 1000,
