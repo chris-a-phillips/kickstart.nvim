@@ -233,7 +233,12 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 
 
+
 require('lazy').setup('plugins')
+
+-- Custom keymaps
+vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = "Toggle Undotree" })
 
 -- Automatically load Solarized Osaka colorscheme
 vim.cmd('colorscheme solarized-osaka')
