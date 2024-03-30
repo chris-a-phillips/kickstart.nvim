@@ -18,8 +18,8 @@ local plugins = {
   { 'numToStr/Comment.nvim', opts = {} },
   { 'folke/todo-comments.nvim', opts = {}, event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } }, -- Highlight todo, notes, etc in comments
   { 'ThePrimeagen/vim-be-good' }, -- practice for vim motions
-  { 'tpope/vim-fugitive' },
-  { 'sansyrox/vim-python-virtualenv' },
+  { 'tpope/vim-fugitive' }, -- git controller using ":G"
+  { 'sansyrox/vim-python-virtualenv' }, -- activate python virtual environment automatically
 }
 
 -- -- Importeed plugins with configurations
@@ -40,5 +40,7 @@ table.insert(plugins, require 'plugins.undotree')
 table.insert(plugins, require 'plugins.which-key')
 table.insert(plugins, require 'plugins.bufferline')
 table.insert(plugins, require 'plugins.incline')
+table.insert(plugins, require 'plugins.keys')
+table.insert(plugins, require 'plugins.nvim-tree')
 
 return plugins

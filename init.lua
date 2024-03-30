@@ -251,6 +251,11 @@ vim.cmd([[
   autocmd BufEnter * execute 'cd ' .. fnamemodify(expand('%:p:h'), ':p')
 ]])
 
+
+vim.cmd [[
+    autocmd BufEnter * KeysToggle
+]]
+
 -- -- Automatically show bufferline when opening a new tab
 -- vim.cmd([[
 --   autocmd TabNewEntered * lua require('bufferline').open()
