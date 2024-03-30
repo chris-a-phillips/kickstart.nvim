@@ -217,7 +217,7 @@ require('lazy').setup 'plugins'
 -- Telescope
 vim.api.nvim_set_keymap('n', '<leader>t', ':Telescope<CR>', { noremap = true, silent = true })
 -- Undotree
-vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = 'Toggle Undotree' })
+-- vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = 'Toggle Undotree' })
 -- New tab
 vim.keymap.set('n', 'te', ':tabedit')
 vim.keymap.set('n', '<tab>', ':tabnext<Return>', opts)
@@ -227,7 +227,7 @@ vim.keymap.set('n', 'ss', ':split<Return>', opts)
 vim.keymap.set('n', 'sv', ':vsplit<Return>', opts)
 
 -- Automatically load Solarized Osaka colorscheme
-vim.cmd 'colorscheme solarized-osaka'
+vim.cmd('colorscheme solarized-osaka')
 
 require('lazy').setup {
   require 'kickstart.plugins.debug',
@@ -251,6 +251,10 @@ vim.cmd([[
   autocmd BufEnter * execute 'cd ' .. fnamemodify(expand('%:p:h'), ':p')
 ]])
 
+-- -- Automatically show bufferline when opening a new tab
+-- vim.cmd([[
+--   autocmd TabNewEntered * lua require('bufferline').open()
+-- ]])
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

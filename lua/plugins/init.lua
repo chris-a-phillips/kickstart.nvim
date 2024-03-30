@@ -13,13 +13,13 @@
 --    require('Comment').setup({})
 -- 'gc' to comment visual regions/lines
 local plugins = {
-  { 'folke/neoconf.nvim', opts = {} , cmd = 'Neoconf' },
+  { 'folke/neoconf.nvim', opts = {}, cmd = 'Neoconf' },
   { 'folke/neodev.nvim', opts = {} },
   { 'numToStr/Comment.nvim', opts = {} },
-  { 'folke/todo-comments.nvim', opts = {} , event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } }, -- Highlight todo, notes, etc in comments
-  { 'ThePrimeagen/vim-be-good'}, -- practice for vim motions
-  { 'tpope/vim-fugitive'},
-  { 'folke/noice.nvim'},
+  { 'folke/todo-comments.nvim', opts = {}, event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } }, -- Highlight todo, notes, etc in comments
+  { 'ThePrimeagen/vim-be-good' }, -- practice for vim motions
+  { 'tpope/vim-fugitive' },
+  { 'sansyrox/vim-python-virtualenv' },
 }
 
 -- -- Importeed plugins with configurations

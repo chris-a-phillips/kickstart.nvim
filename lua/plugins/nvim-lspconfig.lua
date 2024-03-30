@@ -24,10 +24,10 @@ return {
       -- LSP stands for Language Server Protocol. It's a protocol that helps editors
       -- and language tooling communicate in a standardized fashion.
       --
-      -- In general, you have a "server" which is some tool built to understand a particular
+      -- In general, you have a 'server' which is some tool built to understand a particular
       -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
       -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
-      -- processes that communicate with some "client" - in this case, Neovim!
+      -- processes that communicate with some 'client' - in this case, Neovim!
       --
       -- LSP provides Neovim with features like:
       --  - Go to definition
@@ -146,7 +146,7 @@ return {
         -- css
         -- css_variables = {},
         -- c#
-        csharp_ls = {},
+        -- csharp_ls = {},
         -- emmet
         emmet_language_server = {},
         emmet_ls = {},
@@ -188,14 +188,13 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        "stylua",
-        "selene",
-        "luacheck",
-        "shellcheck",
-        "shfmt",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "css-lsp",
+        'stylua',
+        'selene',
+        'shellcheck',
+        'shfmt',
+        'tailwindcss-language-server',
+        'typescript-language-server',
+        'css-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
