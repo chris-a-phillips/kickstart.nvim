@@ -109,6 +109,12 @@ options.setup()
 -- -- Call the setup function to apply the Vim options
 -- keymaps.setup()
 
+-- Require the options module
+local autocommands = require 'autocommands'
+
+-- Call the setup function to apply the Vim options
+autocommands.setup()
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -154,31 +160,6 @@ require('lazy').setup {
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
 }
-
--- -- Autocommands
-
--- Disable the concealing in some file formats
--- The default conceallevel is 3 in LazyVim
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'json', 'jsonc' },
-  callback = function()
-    vim.wo.conceallevel = 0
-  end,
-})
-
--- Automatically change directory to buffer's directory
-vim.cmd [[
-  autocmd BufEnter * execute 'cd ' .. fnamemodify(expand('%:p:h'), ':p')
-]]
-
-vim.cmd [[
-    autocmd BufEnter * KeysToggle
-]]
-
--- -- Automatically show bufferline when opening a new tab
--- vim.cmd([[
---   autocmd TabNewEntered * lua require('bufferline').open()
--- ]])
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
