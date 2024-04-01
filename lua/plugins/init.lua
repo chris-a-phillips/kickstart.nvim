@@ -16,7 +16,7 @@ local plugins = {
   { 'folke/neoconf.nvim', opts = {}, cmd = 'Neoconf' },
   { 'folke/neodev.nvim', opts = {} },
   { 'numToStr/Comment.nvim', opts = {} },
-  { 'folke/todo-comments.nvim', opts = {}, event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } }, -- Highlight todo, notes, etc in comments
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } }, -- Highlight todo, notes, etc in comments
   { 'ThePrimeagen/vim-be-good' }, -- practice for vim motions
   { 'tpope/vim-fugitive' }, -- git controller using ":G"
   { 'sansyrox/vim-python-virtualenv' }, -- activate python virtual environment automatically
@@ -33,7 +33,6 @@ table.insert(plugins, require 'plugins.conform')
 table.insert(plugins, require 'plugins.gitsigns')
 table.insert(plugins, require 'plugins.nvim-cmp')
 table.insert(plugins, require 'plugins.nvim-lspconfig')
-table.insert(plugins, require 'plugins.nvim-tree')
 table.insert(plugins, require 'plugins.telescope')
 table.insert(plugins, require 'plugins.treesitter')
 table.insert(plugins, require 'plugins.undotree')
@@ -41,6 +40,6 @@ table.insert(plugins, require 'plugins.which-key')
 table.insert(plugins, require 'plugins.bufferline')
 table.insert(plugins, require 'plugins.incline')
 table.insert(plugins, require 'plugins.keys')
-table.insert(plugins, require 'plugins.nvim-tree')
+table.insert(plugins, require 'plugins.neo-tree')
 
 return plugins
