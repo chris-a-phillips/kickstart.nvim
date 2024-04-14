@@ -151,6 +151,8 @@ return {
       -- emmet
       emmet_language_server = {},
       emmet_ls = {},
+      -- go
+      gopls = {},
       -- postgres
       -- postgres_lsp = {},
       -- markdown
@@ -193,6 +195,7 @@ return {
       'tailwindcss-language-server',
       'typescript-language-server',
       'css-lsp',
+      'gopls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
