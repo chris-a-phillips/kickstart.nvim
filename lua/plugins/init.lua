@@ -20,6 +20,7 @@ local plugins = {
   { 'ThePrimeagen/vim-be-good' }, -- practice for vim motions
   { 'tpope/vim-fugitive' }, -- git controller using ":G"
   { 'sansyrox/vim-python-virtualenv' }, -- activate python virtual environment automatically
+  { 'windwp/nvim-autopairs', opts = {} },
 }
 
 -- -- Importeed plugins with configurations
