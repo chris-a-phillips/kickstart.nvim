@@ -197,7 +197,7 @@ return {
       --   'tailwindcss-language-server',
       'typescript-language-server',
       'css-lsp',
-      'gopls',
+      -- 'gopls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
