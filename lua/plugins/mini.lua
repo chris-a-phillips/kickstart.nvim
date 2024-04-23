@@ -1,7 +1,7 @@
 -- Collection of various small independent plugins/modules
-return{
-    'echasnovski/mini.nvim',
-    config = function()
+return {
+  'echasnovski/mini.nvim',
+  config = function()
     -- Better Around/Inside textobjects
     --
     -- Examples:
@@ -29,10 +29,11 @@ return{
     -- cursor location to LINE:COLUMN
     ---@diagnostic disable-next-line: duplicate-set-field
     statusline.section_location = function()
-        return '%2l:%-2v'
+      return '%2l:%-2v'
     end
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
-    end,
+  end,
 }
+
