@@ -194,7 +194,7 @@ return {
       'selene',
       'shellcheck',
       'shfmt',
-      'tailwindcss-language-server',
+      --   'tailwindcss-language-server',
       'typescript-language-server',
       'css-lsp',
       'gopls',
