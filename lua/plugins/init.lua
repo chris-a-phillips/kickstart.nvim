@@ -58,7 +58,6 @@ table.insert(plugins, require 'plugins.which-key')
 table.insert(plugins, require 'plugins.bufferline')
 table.insert(plugins, require 'plugins.incline')
 table.insert(plugins, require 'plugins.keys')
-table.insert(plugins, require 'plugins.neo-tree')
--- table.insert(plugins, require 'plugins.nvim-tmux-navigator')
+table.insert(plugins, require 'plugins.nvim-tmux-navigator')
 
 return plugins
