@@ -153,8 +153,8 @@ return {
       emmet_ls = {},
       -- go
       gopls = {},
-      -- postgres
-      -- postgres_lsp = {},
+      -- sql
+      sqlls = {},
       -- markdown
       markdown_oxide = {},
       -- lua
