@@ -20,24 +20,8 @@ local plugins = {
   { 'ThePrimeagen/vim-be-good' }, -- practice for vim motions
   { 'tpope/vim-fugitive' }, -- git controller using ":G"
   { 'sansyrox/vim-python-virtualenv' }, -- activate python virtual environment automatically
-  { 'windwp/nvim-autopairs', opts = {} },
-  {
-    'christoomey/vim-tmux-navigator',
-    cmd = {
-      'TmuxNavigateLeft',
-      'TmuxNavigateDown',
-      'TmuxNavigateUp',
-      'TmuxNavigateRight',
-      'TmuxNavigatePrevious',
-    },
-    keys = {
-      { '<C-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
-      { '<C-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
-      { '<C-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
-      { '<C-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
-      { '<C-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
-    },
-  },
+  { 'windwp/nvim-autopairs', opts = {} }, -- automatically pair quotes, parens, brackets, etc.
+  { 'echasnovski/mini.indentscope', version = '*' }, -- automatically pair quotes, parens, brackets, etc.
 }
 
 -- -- Importeed plugins with configurations
@@ -61,5 +45,9 @@ table.insert(plugins, require 'plugins.keys')
 table.insert(plugins, require 'plugins.nvim-tmux-navigator')
 table.insert(plugins, require 'plugins.nvim-tree')
 table.insert(plugins, require 'plugins.nvim-treesitter-textobjects')
+table.insert(plugins, require 'plugins.rainbow-csv')
+table.insert(plugins, require 'plugins.vim-visual-multi')
+table.insert(plugins, require 'plugins.arrow')
+table.insert(plugins, require 'plugins.undotree')
 
 return plugins

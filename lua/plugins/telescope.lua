@@ -109,6 +109,8 @@ return {
     vim.keymap.set('n', '<leader>sn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[S]earch [N]eovim files' })
+
+    -- Custom keymappings
+
   end,
 }
-
