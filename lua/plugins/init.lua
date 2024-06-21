@@ -7,11 +7,6 @@
 -- with the first argument being the link and the following
 -- keys can be used to configure plugin behavior/loading/etc.
 --
--- Use `opts = {}` to force a plugin to be loaded.
---
---  This is equivalent to:
---    require('Comment').setup({})
--- 'gc' to comment visual regions/lines
 local plugins = {
   { 'folke/neoconf.nvim', opts = {}, cmd = 'Neoconf' },
   { 'folke/neodev.nvim', opts = {} },
@@ -49,5 +44,6 @@ table.insert(plugins, require 'plugins.rainbow-csv')
 table.insert(plugins, require 'plugins.vim-visual-multi')
 table.insert(plugins, require 'plugins.arrow')
 table.insert(plugins, require 'plugins.undotree')
+table.insert(plugins, require 'plugins.supermaven')
 
 return plugins
