@@ -13,10 +13,10 @@ M.setup = function()
   })
 
   -- Automatically change directory to buffer's directory
-  vim.cmd [[
-  autocmd BufEnter * execute 'cd ' .. fnamemodify(expand('%:p:h'), ':p')
-]]
-
+  --   vim.cmd [[
+  --   autocmd BufEnter * execute 'cd ' .. fnamemodify(expand('%:p:h'), ':p')
+  -- ]]
+  --
   vim.cmd [[
     autocmd BufEnter * KeysToggle
 ]]
