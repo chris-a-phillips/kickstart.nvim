@@ -70,11 +70,43 @@ return {
       },
     }
 
-    -- Automatically enable screenkey when entering Neovim or switching buffers
+    -- Automatically toggle screenkey when entering Neovim or switching buffers
     vim.api.nvim_create_autocmd({ 'BufEnter', 'VimEnter' }, {
       callback = function()
-        require('screenkey').start()
+        vim.cmd 'Screenkey'
       end,
     })
+
+    -- Map the toggle for screenkey in the command mode
+    vim.api.nvim_create_user_command('Screenkey', function(args)
+      require('screenkey').toggle(args.args == 'toggle')
+    end, {
+      nargs = '?',
+      desc = 'Toggle Screenkey',
+    })
+
+    -- Toggle the screenkey statusline component
+    vim.g.screenkey_statusline_component = true
+
+    vim.keymap.set('n', '<leader>ssc', function()
+      vim.g.screenkey_statusline_component = not vim.g.screenkey_statusline_component
+    end, { desc = 'Toggle screenkey statusline component' })
+
+    -- Set up lualine with the screenkey statusline component
+    require('lualine').setup {
+      sections = {
+        lualine_c = {
+          -- other components
+          function()
+            return require('screenkey').get_keys()
+          end,
+        },
+      },
+    }
+
+    -- Expose the redraw function
+    vim.keymap.set('n', '<leader>sr', function()
+      require('screenkey').redraw()
+    end, { desc = 'Redraw Screenkey' })
   end,
 }

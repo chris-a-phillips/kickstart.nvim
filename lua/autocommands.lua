@@ -18,7 +18,7 @@ M.setup = function()
   -- ]]
   --
   vim.cmd [[
-    autocmd BufEnter * KeysToggle
+    autocmd BufEnter * Screenkey
 ]]
 
   -- -- Automatically show bufferline when opening a new tab
