@@ -143,7 +143,7 @@ return {
       -- javascript
       eslint = {},
       --typescript
-      tsserver = {},
+      -- ts_standard = {},
       -- css
       -- css_variables = {},
       -- c#
