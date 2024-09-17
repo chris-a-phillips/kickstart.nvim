@@ -45,5 +45,6 @@ table.insert(plugins, require 'plugins.vim-visual-multi')
 table.insert(plugins, require 'plugins.arrow')
 table.insert(plugins, require 'plugins.undotree')
 table.insert(plugins, require 'plugins.supermaven')
+table.insert(plugins, require 'plugins.goto-preview')
 
 return plugins

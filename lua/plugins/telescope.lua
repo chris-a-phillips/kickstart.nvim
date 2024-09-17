@@ -87,6 +87,26 @@ return {
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
+    -- goto keymaps
+    vim.keymap.set('n', '<leader>pd', function()
+      require('goto-preview').goto_preview_definition()
+    end, { desc = '[P]review [D]efinition', noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>pt', function()
+      require('goto-preview').goto_preview_type_definition()
+    end, { desc = '[P]review [T]ype Definition', noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>pi', function()
+      require('goto-preview').goto_preview_implementation()
+    end, { desc = '[P]review [I]mplementation', noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>pD', function()
+      require('goto-preview').goto_preview_declaration()
+    end, { desc = '[P]review [D]eclaration', noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>pP', function()
+      require('goto-preview').close_all_win()
+    end, { desc = '[P]review [P]review Close All Windows', noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>pr', function()
+      require('goto-preview').goto_preview_references()
+    end, { desc = '[P]review [R]eferences', noremap = true, silent = true })
+
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.

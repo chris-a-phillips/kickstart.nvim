@@ -17,6 +17,7 @@ return {
       ['<leader>u'] = { name = '[U]ndo Tree', _ = 'which_key_ignore' },
       ['<leader>e'] = { name = '[E]File Explorer', _ = 'which_key_ignore' },
       ['<leader>*'] = { name = '[*] Git', _ = 'which_key_ignore' },
+      ['<leader>p'] = { name = '[P]review', _ = 'which_key_ignore' },
     }
   end,
 }
