@@ -253,6 +253,15 @@ return {
     vim.keymap.set('n', '<leader>gl3', function()
       vim.cmd "G log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n          %C(white)%s%C(reset)%n          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
     end, { desc = '[G]it [L]og format 3' })
+
+    -- Key mappings for opening Trouble
+    vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true, noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { silent = true, noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>', { silent = true, noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>xl', '<cmd>TroubleToggle loclist<cr>', { silent = true, noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>xq', '<cmd>TroubleToggle quickfix<cr>', { silent = true, noremap = true })
+    vim.api.nvim_set_keymap('n', 'gR', '<cmd>TroubleToggle lsp_references<cr>', { silent = true, noremap = true })
+
     -- End of custom commands
   end,
 }
