@@ -46,5 +46,6 @@ table.insert(plugins, require 'plugins.arrow')
 table.insert(plugins, require 'plugins.undotree')
 table.insert(plugins, require 'plugins.supermaven')
 table.insert(plugins, require 'plugins.goto-preview')
+table.insert(plugins, require 'plugins.trouble')
 
 return plugins
