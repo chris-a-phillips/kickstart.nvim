@@ -5,19 +5,30 @@ return {
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup()
 
-    -- Document existing key chains
+    -- Document existing key chains using the new which-key spec
     require('which-key').register {
-      ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-      ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-      ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-      ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-      ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      ['<leader>;'] = { name = '[;]Arrow Buffer', _ = 'which_key_ignore' },
-      ["<leader>'"] = { name = "[']Arrow File', _ = 'which_key_ignore" },
-      ['<leader>u'] = { name = '[U]ndo Tree', _ = 'which_key_ignore' },
-      ['<leader>e'] = { name = '[E]File Explorer', _ = 'which_key_ignore' },
-      ['<leader>*'] = { name = '[*] Git', _ = 'which_key_ignore' },
-      ['<leader>p'] = { name = '[P]review', _ = 'which_key_ignore' },
+      { '<leader>c', group = '[C]ode' },
+      { '<leader>c_', hidden = true }, -- Ignore this key
+      { '<leader>d', group = '[D]ocument' },
+      { '<leader>d_', hidden = true }, -- Ignore this key
+      { '<leader>r', group = '[R]ename' },
+      { '<leader>r_', hidden = true }, -- Ignore this key
+      { '<leader>s', group = '[S]earch' },
+      { '<leader>s_', hidden = true }, -- Ignore this key
+      { '<leader>w', group = '[W]orkspace' },
+      { '<leader>w_', hidden = true }, -- Ignore this key
+      { '<leader>;', group = '[;]Arrow Buffer' },
+      { '<leader>;_', hidden = true }, -- Ignore this key
+      { "<leader>'", group = "[']Arrow File" }, -- Fixed typo here
+      { "<leader>'_", hidden = true }, -- Ignore this key
+      { '<leader>u', group = '[U]ndo Tree' },
+      { '<leader>u_', hidden = true }, -- Ignore this key
+      { '<leader>e', group = '[E]File Explorer' },
+      { '<leader>e_', hidden = true }, -- Ignore this key
+      { '<leader>g', group = '[G] Git' },
+      { '<leader>g_', hidden = true }, -- Ignore this key
+      { '<leader>p', group = '[P]review' },
+      { '<leader>p_', hidden = true }, -- Ignore this key
     }
   end,
 }
